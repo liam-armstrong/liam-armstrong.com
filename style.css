@@ -1,0 +1,65 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main{
+    height: 90vh;
+}
+.col-8 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    padding-left: 7vw;
+}
+
+.title h1 {
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+    font-size: 7em !important;
+    line-height: 1em;
+}
+
+.title h3 {
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+    font-size: 2.3em !important;
+    line-height: 1em;
+}
+
+.cardcol{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.card {
+    border-radius: 15px !important;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, .5);
+    height: 75vh;
+    width: 21vw;
+    background: black url("/assets/navy-marble.jpg");
+    background-position: top;
+    background-size: cover;
+    
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+    padding: 1vw 2vw 2vw 1vw;
+    
+    font-size: 2em;
+    line-height: 2em;
+    font-weight: 7500;
+}
+
+a{
+    color: white !important;
+}
+
