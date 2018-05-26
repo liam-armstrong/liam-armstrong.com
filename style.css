@@ -10,14 +10,15 @@
 .main{
     height: 90vh;
 }
-.col-8 {
+
+.flexcent{
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
 .title {
-    padding-left: 7vw;
+    padding-left: 2vw;
 }
 
 .title h1 {
@@ -53,10 +54,12 @@
     align-items: flex-end;
     
     padding: 1vw 2vw 2vw 1vw;
+    margin-right: 5vw;
     
     font-size: 2em;
     line-height: 2em;
-    font-weight: 7500;
+    font-weight: 500;
+    
 }
 
 a{
