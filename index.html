@@ -35,7 +35,7 @@
                     <div id="card-front" class="card-face card-front">
                         <img src="assets/navy-marble.jpg" class="cardbg">
                         </img>
-                        <div class="links">
+                        <div id="links" class="links">
                             <a id="about_link" href="#">about</a><br>
                             <a id="contact_link" href="#">contact</a>
                         </div>
@@ -48,7 +48,9 @@
                                 <a href="https://github.com/liam-armstrong/" style="color: white;"><i class="fab fa-github-square fa-2x"></i></a>
                             </div>
                         </div>
-                        <div id="about_copy" class="copy invis"></div>
+                        <div id="about_copy" class="copy invis">
+                            
+                        </div>
                         <div class="links" style="background: rgba(0,0,0,0);">
                             <a id="back_link" href="#">back</a>
                         </div>
@@ -81,7 +83,8 @@
 
     var front = document.getElementById('card-front');
     var back = document.getElementById('card-back');
-
+    var links = document.getElementById('links');
+    
     var about_copy = document.getElementById('about_copy');
     var contact_copy = document.getElementById('contact_copy');
 
@@ -93,12 +96,14 @@
         cardflip();
         about_title.classList.toggle('invis');
         about_copy.classList.toggle('invis');
+        links.classList.toggle('invis');
     }
 
     contact_link.onclick = function() {
         cardflip();
         contact_title.classList.toggle('invis');
         contact_copy.classList.toggle('invis');
+        links.classList.toggle('invis');
     }
 
     back_link.onclick = function() {
@@ -107,6 +112,7 @@
         contact_title.classList.add("invis");
         about_copy.classList.add("invis");
         contact_copy.classList.add("invis");
+        links.classList.toggle('invis');
         //                make copy invisible
     }
 

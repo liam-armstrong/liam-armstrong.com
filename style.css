@@ -111,7 +111,7 @@
     border-radius: 16px !important;
     height: 100%;
     width: 100%;
-    background: #3F3F3F;
+    background: rgba(0,0,0,0.8) ;
     transform: rotateY(180deg);
 }
 
