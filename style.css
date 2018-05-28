@@ -34,7 +34,7 @@
 }
 
 .title {
-    padding-left: 4vw !important;
+    padding-left: 3vw !important;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -52,6 +52,13 @@
     opacity: 0.9;
     font-size: 2.3em !important;
     line-height: 1em;
+}
+
+.copy {
+    font-family: 'Raleway', sans-serif;
+    margin: 30px 15px 15px 15px;
+    color: #EDEEEF;
+    font-size: 1.2em;
 }
 
 .accent {
@@ -76,9 +83,10 @@
 
 .card {
     margin-left: auto;
-    margin-right: 0;
-    width: 300px;
-    height: 83%;
+    margin-right: 3vw;
+    width: 35vw;
+    min-width: 300px;
+    height: 60%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -105,32 +113,38 @@
 }
 
 .card-back {
+    text-align: center;
     border-radius: 16px !important;
     height: 100%;
     width: 100%;
-    background: black;
+    background: #3F3F3F;
     transform: rotateY(180deg);
 }
 
 .flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 .links {
-    line-height: 3em;
-    font-weight: 600;
+    line-height: 2em;
+    font-weight: 400;
     text-align: right;
 
     color: white !important;
     position: absolute;
     bottom: 8px;
-    right: 30px;
+    right: 8px;
     font-size: 1.65em;
+    
+    border-radius: 17px;
+    background: rgba(0,0,0,0.5);
+    padding:8px 15px;
 }
 
 #about_link,
 #contact_link,
 #back_link {
+    font-family: 'Raleway', sans-serif;
     color: white;
     font-size: 1.25em;
 }
