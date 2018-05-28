@@ -54,13 +54,6 @@
     line-height: 1em;
 }
 
-.copy {
-    font-family: 'Raleway', sans-serif;
-    margin: 30px 15px 15px 15px;
-    color: #EDEEEF;
-    font-size: 1.2em;
-}
-
 .accent {
     opacity: 0.7;
     color: #ad9060;
@@ -110,6 +103,7 @@
     width: 100%;
     border-radius: 16px !important;
     backface-visibility: hidden;
+    background: rgba(0,0,0,0);
 }
 
 .card-back {
@@ -121,8 +115,26 @@
     transform: rotateY(180deg);
 }
 
+.copy {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 30px 70px 30px;   
+    width: 100%;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: #EDEEEF;
+    font-size:calc(10px + 0.8vw);
+}
+
 .flipped {
     transform: rotateY(-180deg);
+}
+
+.copy_icon {
+    position: absolute;
+    bottom: 18px;
+    left: 30px;
 }
 
 .links {
@@ -137,7 +149,7 @@
     font-size: 1.65em;
     
     border-radius: 17px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0);
     padding:8px 15px;
 }
 

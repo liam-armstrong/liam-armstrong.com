@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 
@@ -35,11 +36,16 @@
                         </div>
                     </div>
                     <div id="card-back" class="card-face card-back">
-                        <div id="about_copy" class="copy">
-                            Hi! <br> My name is Liam Armstrong <br><br>
-                            I'm a second year Computer Science student at the University of British Columbia in Vancouver, Canada. <br> ....
+                        <div id="about_copy" class="copy invis">
+                            Hi! <br> My name is Liam Armstrong. <br>
+                            I'm a second year Computer Science student at the University of British Columbia in Vancouver, Canada. <br> To learn more about my professional life, you can view my LinkedIn and the projects I'm working on are hosted on my Github.
+                            <div class="copy_icon">
+                                <a href="https://www.linkedin.com/in/liam-armstrong/" style="color: white; margin-right: 10px;"><i class="fab fa-linkedin fa-2x"></i></a>
+                                <a href="https://github.com/liam-armstrong/" style="color: white;"><i class="fab fa-github-square fa-2x"></i></a>
+                            </div>
                         </div>
-                        <div class="links">
+                        <div id="about_copy" class="copy invis"></div>
+                        <div class="links" style="background: rgba(0,0,0,0);">
                             <a id="back_link" href="#">back</a>
                         </div>
                     </div>
@@ -71,7 +77,10 @@
 
     var front = document.getElementById('card-front');
     var back = document.getElementById('card-back');
-
+    
+    var about_copy = document.getElementById('about_copy');
+    var contact_copy = document.getElementById('contact_copy');
+    
     var welcome_title = document.getElementById('welcome-title');
     var about_title = document.getElementById('about-title');
     var contact_title = document.getElementById('contact-title');
@@ -79,19 +88,21 @@
     about_link.onclick = function() {
         cardflip();
         about_title.classList.toggle('invis');
-        //                make copy visible
+        about_copy.classList.toggle('invis');
     }
 
     contact_link.onclick = function() {
         cardflip();
         contact_title.classList.toggle('invis');
-        //                make copy visible
+        contact_copy.classList.toggle('invis');
     }
 
     back_link.onclick = function() {
         cardflip();
         about_title.classList.add("invis");
         contact_title.classList.add("invis");
+        about_copy.classList.add("invis");
+        contact_copy.classList.add("invis");
         //                make copy invisible
     }
 
