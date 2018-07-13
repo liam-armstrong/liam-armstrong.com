@@ -12,6 +12,8 @@
     height: 90vh;
     margin-bottom: 5vh;
     display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .transform {
@@ -68,23 +70,29 @@
 }
 
 .cardcol {
+    height: 50vh;
     display: flex;
     justify-content: right;
     align-items: center;
     perspective: 1200px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .card {
-    margin-left: auto;
-    margin-right: 3vw;
     width: 35vw;
     min-width: 300px;
-    height: 60%;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: 3vw;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     border-radius: 17px !important;
     border: 0px solid black !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .boxshadow {
@@ -102,8 +110,10 @@
     height: 100%;
     width: 100%;
     border-radius: 16px !important;
-    backface-visibility: hidden;
     background: rgba(0,0,0,0);
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    transform: translateZ(1px);
 }
 
 .card-back {
@@ -111,14 +121,17 @@
     border-radius: 16px !important;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,0.8) ;
+    background: rgba(0,0,0,0.8);
     transform: rotateY(180deg);
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
 }
 
 .copy {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY (-50%);
     padding: 30px 30px 70px 30px;   
     width: 100%;
     height: 100%;
@@ -127,8 +140,9 @@
     font-size:calc(10px + 0.8vw);
 }
 
-.flipped {
+.cardcol:hover .card {
     transform: rotateY(-180deg);
+    -webkit-transform: rotateY (-180deg);
 }
 
 .copy_icon {
