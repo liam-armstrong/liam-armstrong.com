@@ -144,9 +144,9 @@
     font-size:calc(10px + 0.8vw);
 }
 
-.cardcol:hover .card {
-    transform: rotateY (-180deg);
-    -webkit-transform: rotateY (-180deg);
+.cardcol:hover .card{
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
 }
 
 #emailbtn,
