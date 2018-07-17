@@ -5,33 +5,48 @@
 
 .body {
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
 }
 
-.main {
+.main{
     height: 90vh;
-    margin-bottom: 5vh;
+    padding-top: 2.5vh;
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
-.transform {
-    -webkit-transition: all 2s ease;
-    -moz-transition: all 2s ease;
-    -o-transition: all 2s ease;
-    -ms-transition: all 2s ease;
-    transition: all 2s ease;
+.transition {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
 
     transition: background 0.5s ease;
     transition: opacity 0.5s ease;
 }
 
-.menuBtn {
+#overlay-open,
+#overlay-close{
+    border: none;
+    background: transparent; 
+}
+
+.overlay-button-col{
     height: 5vh;
-    margin: 2vh;
+    margin: 3vh;
     opacity: 0.5;
     border: none;
+    background: white;
+}
+
+.aboutBtn{
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
     background: white;
 }
 
@@ -61,14 +76,6 @@
     color: #ad9060;
 }
 
-.subtitle {
-    position: absolute;
-}
-
-.invis {
-    opacity: 0 !important;
-}
-
 .cardcol {
     height: 50vh;
     display: flex;
@@ -93,9 +100,6 @@
     border: 0px solid black !important;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-}
-
-.boxshadow {
     box-shadow: 7px 7px 7px 2px rgba(0, 0, 0, .5);
 }
 
@@ -132,7 +136,7 @@
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY (-50%);
-    padding: 90px 30px 70px 30px;   
+    padding: 10% 30px;   
     width: 100%;
     height: 100%;
     font-family: 'Raleway', sans-serif;
@@ -141,14 +145,8 @@
 }
 
 .cardcol:hover .card {
-    transform: rotateY(-180deg);
+    transform: rotateY (-180deg);
     -webkit-transform: rotateY (-180deg);
-}
-
-.copy_icon {
-    position: absolute;
-    bottom: 18px;
-    left: 30px;
 }
 
 #emailbtn,
@@ -163,15 +161,91 @@
     text-align: center;
     max-width: 225px;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 16px;
     margin: 20px auto;
     padding: 20px 30px;
     color: white;
-    box-shadow: RGBA(173, 144, 96, 1) 0 0px 0px 2px inset;
+    box-shadow: RGBA(173, 144, 96, 1) 0 0px 0px 3px inset;
 }
 
 #emailbtn:hover,
 #linkedinbtn:hover {
     color: rgba(255, 255, 255, 0.85);
     box-shadow: RGBA(173, 144, 96, 0.7) 0 0px 0px 40px inset;
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.9);
+}
+
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.overlay ul li a {
+	font-size: 54px;
+	font-weight: 300;
+	display: block;
+	color: #ad8f60ab;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #ad9060;
+}
+
+#overlay-close{
+    font-size: 46px;
+    color: #ad9060;
+    position: relative;
+    top: 2.5vh;
+    left: 95vw;
+}
+
+.overlay-contentpush {
+visibility: hidden;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+-webkit-transform: translateX(100%);
+transform: translateX(100%);
+-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-contentpush.open {
+visibility: visible;
+-webkit-transform: translateX(0%);
+transform: translateX(0%);
+-webkit-transition: -webkit-transform 0.5s;
+transition: transform 0.5s;
 }
