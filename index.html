@@ -37,7 +37,7 @@
         </div>
         <div class="row main">
             <div class="col-6 cardcol">
-                <div class="card">
+                <div id="card" class="card">
                     <div class="card-face card-front">
                         <img src="assets/navy-marble.jpg" class="cardbg">
                         </img>
@@ -97,7 +97,7 @@
     const overlay = document.getElementById("overlay");
     const nav = document.getElementById("overlay-nav");
     const about = document.getElementById("about-copy");
-    const card = document.getElementsByClassName("card");
+    const card = document.getElementById("card");
     const copy = document.getElementById("copy");
 
     var about_copy = [
@@ -120,7 +120,7 @@
         copy_index = 0;
         copy.innerHTML = about_copy[copy_index];
         aboutNext.classList.toggle('invis', false);
-        about.classList.toggle('invis', false);
+        about.classList.toggle('invis');
         aboutLink.classList.toggle('active');
     }
     menuBtn.onclick = function () {
@@ -128,6 +128,14 @@
     }
     closeBtn.onclick = function () {
         overlay.classList.toggle('open');
+    }
+    contactLink.onclick = function () {
+        overlay.classList.toggle('open');
+        setTimeout(card.classList.toggle('spin'), 250);
+    }
+
+    card.onmouseover = function(){
+        card.classList.remove('spin');
     }
 </script>
 
