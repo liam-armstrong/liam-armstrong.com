@@ -30,25 +30,29 @@
     <div class="container-fluid">
         <div class="row" style="height: 5vh; justify-content: flex-end">
             <div class="col- offset-11 overlay-button-col">
-                <button id="overlay-open" type="button" class="overlay-open"><img src="assets/menu.svg"></button>
+                <button id="overlay-open" type="button" class="overlay-open">
+                    <img src="assets/menu.svg">
+                </button>
             </div>
         </div>
         <div class="row main">
             <div class="col-6 cardcol">
-                    <div class="card">
-                        <div class="card-face card-front">
-                            <img src="assets/navy-marble.jpg" class="cardbg">
-                            </img>
-                        </div>  
-                        <div class="card-face card-back">
-                            <div class="copy"><h1>Looking to get in touch?</h1><br>
-                                <a href="mailto:hello@liam-armstrong.com" class="button" id="emailbtn">
-                                    Email</a>
-                                <a href="https://www.linkedin.com/in/liam-armstrong/" class="button" id="linkedinbtn">
-                                    LinkedIn</a>
-                            </div>
+                <div class="card">
+                    <div class="card-face card-front">
+                        <img src="assets/navy-marble.jpg" class="cardbg">
+                        </img>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="copy" style="width: 100%; height: 100%;">
+                            <h1>Looking to get in touch?</h1>
+                            <br>
+                            <a href="mailto:hello@liam-armstrong.com" class="button" id="emailbtn">
+                                Email</a>
+                            <a href="https://www.linkedin.com/in/liam-armstrong/" class="button" id="linkedinbtn">
+                                LinkedIn</a>
                         </div>
                     </div>
+                </div>
             </div>
             <div class="col-6 flexcent title">
                 <div class="welcome-title">
@@ -57,33 +61,54 @@
                     <h1 class="">Armstrong</h1>
                 </div>
             </div>
-    </div>
-    <div id="overlay" class="overlay overlay-contentpush">
-			<button id="overlay-close" type="button"><i class="fas fa-times"></i></button>
-			<nav>
-				<ul>
-					<li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <!-- Icons -->
-				</ul>
-			</nav>
-		</div>
+        </div>
+        <div id="overlay" class="overlay overlay-contentpush">
+            <row>
+                <div class="col-offset-11">
+                    <button id="overlay-close" type="button">
+                        <img src="./assets/outline-close-24px.svg"></img>
+                    </button>
+                </div>
+            </row>
+            <row style="display:flex; height: 90%; align-content: center;
+            justify-content: center;">
+                <div id="about-copy" class="col-6 offset-2 transition invis">
+                    <h1>About</h1>
+                    <p>Def yes
+                        <br> THis is copy
+                        <br> copy copy copy</p>
+                </div>
+                <nav id="overlay-nav" class="col-3 transition">
+                        <a id="about-link" href="#">About</a>
+                        <a id="contact-link" href="#">Contact</a>
+                        <!-- Icons -->
+                </nav>
+            </row>
+        </div>
 </body>
 
 <script>
-const menuBtn = document.getElementById("overlay-open");
-const closeBtn = document.getElementById("overlay-close");
-const overlay = document.getElementById("overlay");
+    const menuBtn = document.getElementById("overlay-open");
+    const closeBtn = document.getElementById("overlay-close");
+    const aboutLink = document.getElementById("about-link");
+    const contactLink = document.getElementById("contact-link");
 
-menuBtn.onclick = function(){
-    overlay.classList.toggle('open');
-    // alert("open")
-}
+    const overlay = document.getElementById("overlay");
+    const nav = document.getElementById("overlay-nav");
+    const about = document.getElementById("about-copy");
+    const card = document.getElementsByClassName("card");
 
-closeBtn.onclick = function(){
-    overlay.classList.toggle('open');
-    // alert("close")
-}
+    aboutLink.onclick = function () {
+        about.classList.toggle('invis');
+        nav.classList.toggle('move-right');
+        aboutLink.classList.toggle('active');
+    }
+    menuBtn.onclick = function () {
+        overlay.classList.toggle('open');
+    }
+    closeBtn.onclick = function () {
+        overlay.classList.toggle('open');
+    }
 </script>
 
 </html>
