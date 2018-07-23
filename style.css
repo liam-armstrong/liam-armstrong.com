@@ -36,6 +36,17 @@
     background: transparent;
 }
 
+#overlay-open:hover{
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+}
+
+#overlay-close:hover,
+#about-next:hover {
+    filter: brightness(150%);
+    -webkit-filter: brightness(150%);
+}
+
 .overlay-button-col {
     height: 5vh;
     margin: 3vh;
@@ -142,8 +153,10 @@
 }
 
 .spin{
-    transform: rotateY(-720deg);
-    -webkit-transform: rotateY(-720deg);
+    transform: rotateY(-360deg);
+    -webkit-transform: rotateY(-360deg);
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
 }
 
 #emailbtn,
@@ -241,6 +254,7 @@
 
 #copy{
     margin-bottom: 5vh;
+    transition: opacity 0.5s ease;
 }
 
 #about-next{

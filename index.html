@@ -31,7 +31,7 @@
         <div class="row" style="height: 5vh; justify-content: flex-end">
             <div class="col- offset-11 overlay-button-col">
                 <button id="overlay-open" type="button" class="overlay-open">
-                    <img src="assets/menu.svg">
+                    <img src="assets/menu.svg"></img>
                 </button>
             </div>
         </div>
@@ -73,12 +73,12 @@
             <row style="display:flex; height: 90%; align-content: center;
             justify-content: center;">
                 <div id="about-copy" class="col-6 offset-2 transition invis">
-                    <div id="copy"></div>
+                    <div id="copy" class="transition"></div>
                     <button id="about-next" type="button">
                         <img src="./assets/outline-chevron_left-24px.svg"></img>
                     </button>
                 </div>
-                <nav id="overlay-nav" class="col-3 transition">
+                <nav id="overlay-nav" class="col-3">
                     <a id="about-link" href="#">About</a>
                     <a id="contact-link" href="#">Contact</a>
                     <!-- Icons -->
@@ -102,17 +102,21 @@
 
     var about_copy = [
         "<h1>Hi\! I'm Liam Armstrong, a Computer Science student at the University of British Columbia in Vancouver</h1>",
-        "<h3>\"What do you want to be when you grow up\" was always my favorite question to be asked when I was little. I would look up at the person asking with a big smile and say \"A trophy husband\!\" Some of my most treasured childhood drawings are of myself at a rock solid 6\'3\", beside a loving, supportive and - most importantly - wealthy wife. <br> I\'ve been informed this is not a reasonable career goal</h3>",
+        "<h3>\"What do you want to be when you grow up\" was always my favorite question to be asked when I was little. I would look up at the person asking with a big smile and say \"A trophy husband\!\" Some of my most treasured childhood drawings are of myself at a rock solid 6\'3\", beside a loving, supportive wife. <br> I\'ve been informed this is not a reasonable career goal</h3>",
         "<h3>In the meantime, I'm in my second year of Computer Science studies at UBC. I'm regularly involved in the planning of hackathons and other computer science events on campus and beyond. I was born in Toronto, Canada and have a wide variety of interests including: cooking, fashion, music, travelling and photography</h3>",
         "<h5>Small disclaimer: The trophy husband stuff is meant as a joke, please don't take that seriously</h5>"
     ]
     var copy_index = 0;
 
-    aboutNext.onclick = function () {
+    aboutNext.onclick = function(){
         copy_index++;
-        copy.innerHTML = about_copy[copy_index];
+        about.style.opacity = 0;
+        setTimeout(function() {
+            copy.innerHTML = about_copy[copy_index];
+            about.style.opacity = 1;
+        }, 400);
         if(copy_index == (about_copy.length - 1)){
-            aboutNext.classList.toggle("invis");
+            aboutNext.style.visibility = "hidden";
         }
     }
 
@@ -120,6 +124,7 @@
         copy_index = 0;
         copy.innerHTML = about_copy[copy_index];
         aboutNext.classList.toggle('invis', false);
+        aboutNext.style.visibility = "visible";
         about.classList.toggle('invis');
         aboutLink.classList.toggle('active');
     }
