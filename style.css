@@ -103,8 +103,6 @@
     -webkit-transform-style: preserve-3d;
     border-radius: 17px !important;
     border: 0px solid black !important;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     box-shadow: 7px 7px 7px 2px rgba(0, 0, 0, .5);
 }
 
